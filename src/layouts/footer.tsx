@@ -99,7 +99,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <h2 className="absolute left-1/2 top-[365px] z-10 w-full -translate-x-1/2 whitespace-nowrap text-center font-sans text-[clamp(48px,8.45vw,146px)] font-medium leading-none text-black md:top-[280px] xl:top-[325px]">
+        <h2 className="absolute left-1/2 top-[365px] z-10 w-full -translate-x-1/2 whitespace-nowrap text-center font-sans text-[clamp(38px,8.45vw,116px)] font-medium leading-none text-black md:top-[280px] xl:top-[325px]">
           PROPASS- CONTACT
         </h2>
 
