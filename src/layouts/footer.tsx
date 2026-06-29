@@ -22,12 +22,19 @@ export default function Footer() {
   return (
     <footer
       id="contact"
+      data-footer
       className="relative overflow-hidden bg-white px-4 pt-8 pb-6 text-black"
     >
-      <div className="pointer-events-none absolute left-1/2 top-[-415px] size-[640px] -translate-x-1/2 rounded-full border border-zinc-300 md:top-[-520px] md:size-[780px] xl:top-[-705px] xl:size-[1040px]" />
+      <div
+        data-footer-orbit
+        className="pointer-events-none absolute left-1/2 top-[-415px] size-[640px] -translate-x-1/2 rounded-full border border-zinc-300 md:top-[-520px] md:size-[780px] xl:top-[-705px] xl:size-[1040px]"
+      />
 
       <div className="relative mx-auto h-[700px] max-w-[1180px] md:h-[545px] xl:h-[680px]">
-        <div className="relative z-20 mx-auto max-w-[560px] text-center">
+        <div
+          data-animate="reveal"
+          className="relative z-20 mx-auto max-w-[560px] text-center"
+        >
           <div className="flex items-center justify-center gap-2 text-[13px] font-semibold">
             Témoignage
             <Smile className="size-4" strokeWidth={2.3} aria-hidden="true" />
@@ -47,7 +54,10 @@ export default function Footer() {
           </div>
 
           <div className="mt-7 flex items-center justify-center gap-3">
-            <div className="relative size-10 overflow-hidden rounded-[8px] bg-zinc-200">
+            <div
+              data-float="3"
+              className="relative size-10 overflow-hidden rounded-[8px] bg-zinc-200"
+            >
               <Image
                 src="/images/propass-testimonial-profile.jpg"
                 alt="Portrait du client Amani Kalombo"
@@ -75,7 +85,10 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="absolute left-[20px] top-[295px] z-30 rounded-[14px] border border-white bg-white p-1.5 shadow-[0_12px_34px_rgba(0,0,0,0.08)] md:left-[110px] md:top-[150px] md:p-2 xl:left-[150px] xl:top-[180px] xl:p-2.5">
+        <div
+          data-float="9"
+          className="absolute left-[20px] top-[295px] z-30 rounded-[14px] border border-white bg-white p-1.5 shadow-[0_12px_34px_rgba(0,0,0,0.08)] md:left-[110px] md:top-[150px] md:p-2 xl:left-[150px] xl:top-[180px] xl:p-2.5"
+        >
           <div className="relative h-[118px] w-[118px] overflow-hidden rounded-[10px] bg-zinc-200 md:h-[140px] md:w-[136px] xl:h-[178px] xl:w-[178px]">
             <Image
               src="/images/propass-footer-room.jpg"
@@ -87,7 +100,10 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="absolute right-[26px] top-[400px] z-30 rounded-[14px] border border-white bg-white p-1.5 shadow-[0_12px_34px_rgba(0,0,0,0.08)] md:right-[176px] md:top-[310px] md:p-2 xl:right-[260px] xl:top-[365px] xl:p-2.5">
+        <div
+          data-float="7"
+          className="absolute right-[26px] top-[400px] z-30 rounded-[14px] border border-white bg-white p-1.5 shadow-[0_12px_34px_rgba(0,0,0,0.08)] md:right-[176px] md:top-[310px] md:p-2 xl:right-[260px] xl:top-[365px] xl:p-2.5"
+        >
           <div className="relative h-[105px] w-[96px] overflow-hidden rounded-[10px] bg-zinc-200 md:h-[110px] md:w-[98px] xl:h-[145px] xl:w-[126px]">
             <Image
               src="/images/propass-footer-suite.jpg"
@@ -99,15 +115,22 @@ export default function Footer() {
           </div>
         </div>
 
-        <h2 className="absolute left-1/2 top-[365px] z-10 w-full -translate-x-1/2 whitespace-nowrap text-center font-sans text-[clamp(38px,8.45vw,116px)] font-medium leading-none text-black md:top-[280px] xl:top-[325px]">
+        <h2
+          data-animate="reveal"
+          className="absolute left-1/2 top-[365px] z-10 w-full -translate-x-1/2 whitespace-nowrap text-center font-sans text-[clamp(28px,8.45vw,116px)] font-medium leading-none text-black md:top-[280px] xl:top-[325px]"
+        >
           PROPASS- CONTACT
         </h2>
 
-        <div className="absolute left-1/2 top-[475px] z-20 w-full max-w-[440px] -translate-x-1/2 text-center md:top-[390px] xl:top-[500px]">
+        <div
+          data-animate="reveal"
+          className="absolute left-1/2 top-[475px] z-20 w-full max-w-[440px] -translate-x-1/2 text-center md:top-[390px] xl:top-[500px]"
+        >
           <nav className="flex items-center justify-center gap-6 text-xs font-semibold">
             {footerLinks.map((link) => (
               <a
                 key={link}
+                data-magnetic="4"
                 href="#"
                 className="inline-flex items-center gap-2 hover:text-zinc-600"
               >
@@ -130,6 +153,7 @@ export default function Footer() {
             {socialLinks.map(({ label, Icon }) => (
               <a
                 key={label}
+                data-magnetic="6"
                 href="#"
                 aria-label={label}
                 className="grid size-10 place-items-center rounded-full border border-zinc-200 bg-white text-black transition-colors hover:bg-zinc-50"
@@ -140,7 +164,10 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="absolute inset-x-0 bottom-0 flex flex-col items-center justify-between gap-3 text-[11px] font-medium text-black md:flex-row">
+        <div
+          data-animate="reveal"
+          className="absolute inset-x-0 bottom-0 flex flex-col items-center justify-between gap-3 text-[11px] font-medium text-black md:flex-row"
+        >
           <p>Helpline: +243 900 000 000</p>
           <p>© 2026 Propass Hotel. Tous droits réservés.</p>
         </div>
