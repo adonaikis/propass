@@ -63,7 +63,7 @@ export default function FaqSupport() {
 
           <Link
             data-magnetic="7"
-            href="/reservation"
+            href="/contact"
             className="mt-8 inline-flex h-11 w-fit items-center gap-3 rounded-full bg-black pl-6 pr-1.5 text-xs font-semibold text-white transition-colors hover:bg-zinc-800"
           >
             Contacter Propass

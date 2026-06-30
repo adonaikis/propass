@@ -113,8 +113,8 @@ export default function AboutComfort() {
           </div>
 
           <ImageCard
-            src="/images/propass-about-window.jpg"
-            alt="Salon lumineux avec vue panoramique au coucher du soleil"
+            src="/PHOTO-PROPASS/chambre100$1.jpg"
+            alt="Chambre Propass lumineuse avec espace de repos"
             label="Espace intérieur"
             className="h-[245px] min-[1180px]:h-[290px]"
           >
@@ -138,8 +138,8 @@ export default function AboutComfort() {
 
           <div data-animate-item className="min-[860px]:pt-10">
             <ImageCard
-              src="/images/propass-about-rooftop.jpg"
-              alt="Rooftop avec piscine et lounge au coucher du soleil"
+              src="/PHOTO-PROPASS/maisondepassage.jpg"
+              alt="Maisons de passage Propass au cœur du jardin"
               label="Extérieur"
               imageClassName="object-bottom"
               className="h-[170px] min-[1180px]:h-[210px]"

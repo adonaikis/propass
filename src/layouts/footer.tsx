@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import {
   ArrowRight,
   Camera,
@@ -10,7 +11,11 @@ import {
   X,
 } from "lucide-react";
 
-const footerLinks = ["À propos", "FAQ", "Contact"];
+const footerLinks = [
+  { label: "À propos", href: "/about-us" },
+  { label: "FAQ", href: "/faqs" },
+  { label: "Contact", href: "/contact" },
+];
 const socialLinks = [
   { label: "LinkedIn", Icon: Mail },
   { label: "Instagram", Icon: Camera },
@@ -128,19 +133,19 @@ export default function Footer() {
         >
           <nav className="flex items-center justify-center gap-6 text-xs font-semibold">
             {footerLinks.map((link) => (
-              <a
-                key={link}
+              <Link
+                key={link.label}
                 data-magnetic="4"
-                href="#"
+                href={link.href}
                 className="inline-flex items-center gap-2 hover:text-zinc-600"
               >
-                {link}
+                {link.label}
                 <ArrowRight
                   className="size-3"
                   strokeWidth={2.4}
                   aria-hidden="true"
                 />
-              </a>
+              </Link>
             ))}
           </nav>
 

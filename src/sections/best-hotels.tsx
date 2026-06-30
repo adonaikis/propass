@@ -10,23 +10,23 @@ import {
 const hotels = [
   {
     name: "Crystal View Hotel",
-    image: "/images/propass-best-crystal.jpg",
-    alt: "Hôtel moderne avec piscine à débordement",
+    image: "/PHOTO-PROPASS/chambre100$1.jpg",
+    alt: "Chambre lumineuse de Propass",
   },
   {
     name: "The Grand Terrace",
-    image: "/images/propass-best-terrace.jpg",
-    alt: "Salon d'hôtel chaleureux avec bois et lumière douce",
+    image: "/PHOTO-PROPASS/resto2.jpg",
+    alt: "Salle de restauration de Propass",
   },
   {
     name: "Serenity Bay Inn",
-    image: "/images/propass-best-serenity.jpg",
-    alt: "Cour intérieure d'hôtel avec piscine et végétation",
+    image: "/PHOTO-PROPASS/maisondepassage.jpg",
+    alt: "Maison de passage au cœur du jardin Propass",
   },
   {
     name: "Golden Sands Resort",
-    image: "/images/propass-best-golden.jpg",
-    alt: "Chambre d'hôtel lumineuse avec lit blanc",
+    image: "/PHOTO-PROPASS/salle2.jpg",
+    alt: "Grande salle de réception Propass",
   },
 ];
 

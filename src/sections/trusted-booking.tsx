@@ -26,32 +26,32 @@ const partners: { name: string; Icon: LucideIcon; className?: string }[] = [
 
 const galleryImages = [
   {
-    src: "/images/propass-trusted-room.jpg",
-    alt: "Suite lumineuse avec lit et balcon",
+    src: "/PHOTO-PROPASS/chambre100$1.jpg",
+    alt: "Chambre Propass lumineuse avec lit double",
     className:
       "h-[210px] md:mt-8 md:h-[160px] md:w-[158px] min-[1180px]:mt-11 min-[1180px]:h-[205px] min-[1180px]:w-[205px]",
   },
   {
-    src: "/images/propass-trusted-building.jpg",
-    alt: "Façade moderne d'hôtel en ville",
+    src: "/PHOTO-PROPASS/derrier.jpg",
+    alt: "Entrée d'un bâtiment Propass entourée de palmiers",
     className:
       "h-[210px] md:mt-0 md:h-[145px] md:w-[95px] min-[1180px]:h-[190px] min-[1180px]:w-[125px]",
   },
   {
-    src: "/images/propass-trusted-lobby.jpg",
-    alt: "Lobby d'hôtel avec fauteuils et lumière chaude",
+    src: "/PHOTO-PROPASS/sec.jpg",
+    alt: "Agente Propass au bureau d'accueil",
     className:
       "h-[210px] md:mt-12 md:h-[168px] md:w-[168px] min-[1180px]:mt-14 min-[1180px]:h-[218px] min-[1180px]:w-[218px]",
   },
   {
-    src: "/images/propass-trusted-suite.jpg",
-    alt: "Chambre élégante avec lampes et lit confortable",
+    src: "/PHOTO-PROPASS/salle2.jpg",
+    alt: "Grande salle de réception Propass",
     className:
       "h-[210px] md:mt-16 md:h-[124px] md:w-[94px] min-[1180px]:mt-[72px] min-[1180px]:h-[160px] min-[1180px]:w-[125px]",
   },
   {
-    src: "/images/propass-trusted-bar.jpg",
-    alt: "Bar d'hôtel élégant éclairé le soir",
+    src: "/PHOTO-PROPASS/resto2.jpg",
+    alt: "Restaurant Propass préparé pour le service",
     className:
       "h-[210px] md:mt-8 md:h-[126px] md:w-[150px] min-[1180px]:mt-11 min-[1180px]:h-[165px] min-[1180px]:w-[200px]",
   },

@@ -12,6 +12,7 @@ const navItems = [
   { label: "À propos", href: "/about-us" },
   { label: "Chambres", href: "/chambres" },
   { label: "Services", href: "/services" },
+  { label: "Galerie", href: "/galleries" },
   { label: "Réservation", href: "/reservation" },
   { label: "FAQ", href: "/faqs" },
 ];
@@ -177,7 +178,7 @@ export default function Header() {
       </div>
 
       <nav
-        className="hidden shrink-0 items-center gap-6 text-[10px] font-medium min-[860px]:flex"
+        className="hidden shrink-0 items-center gap-5 text-[10px] font-medium min-[860px]:flex"
         aria-label="Primary navigation"
       >
         {navItems.map((item) => {
@@ -219,7 +220,7 @@ export default function Header() {
 
       <div className="flex shrink-0 items-center gap-3">
         <label
-          className={`hidden h-9 min-w-0 items-center gap-2 rounded-full px-4 text-[11px] transition-colors md:flex ${
+          className={`hidden h-9 min-w-0 items-center gap-2 rounded-full px-4 text-[11px] transition-colors min-[1120px]:flex ${
             useDarkTheme
               ? "bg-white/10 text-white/50"
               : "bg-zinc-50 text-zinc-500"
@@ -246,14 +247,15 @@ export default function Header() {
 
         <Link
           data-magnetic="7"
-          href="/reservation"
+          href="/contact"
+          aria-current={pathname === "/contact" ? "page" : undefined}
           className={`flex h-10 shrink-0 items-center gap-2 rounded-full pl-5 pr-1.5 text-xs font-semibold whitespace-nowrap transition-colors ${
             useDarkTheme
               ? "bg-white text-black hover:bg-zinc-200"
               : "bg-black text-white hover:bg-zinc-800"
           }`}
         >
-          Réserver
+          Contactez-nous
           <span
             className={`grid size-6 place-items-center rounded-full transition-colors ${
               useDarkTheme ? "bg-black text-white" : "bg-white text-black"

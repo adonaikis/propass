@@ -147,49 +147,54 @@ html.dark {
 
 .dark body,
 .dark .min-h-screen.bg-white {
-  background-color: #09090b;
-  color: #fafafa;
+  background-color: #080808;
+  color: #f4f4f5;
 }
 
 .dark :is(section.bg-white, section.bg-zinc-50, section.bg-zinc-100, footer.bg-white) {
-  background-color: #09090b;
-  color: #fafafa;
+  background-color: #080808;
+  color: #f4f4f5;
+}
+
+.dark section.bg-black {
+  background-color: #101010;
 }
 
 .dark
   :is(section.bg-white, section.bg-zinc-50, section.bg-zinc-100, footer.bg-white)
   :is(div, article, aside, form, label).bg-white {
-  background-color: #18181b;
+  background-color: #151515;
+  border-color: rgb(255 255 255 / 12%);
 }
 
 .dark
   :is(section.bg-white, section.bg-zinc-50, section.bg-zinc-100, footer.bg-white)
   :is(.bg-zinc-50, .bg-zinc-100) {
-  background-color: #18181b;
+  background-color: #151515;
 }
 
 .dark
   :is(section.bg-white, section.bg-zinc-50, section.bg-zinc-100, footer.bg-white)
   :is(.bg-zinc-200, .bg-zinc-300) {
-  background-color: #27272a;
+  background-color: #242424;
 }
 
 .dark
   :is(section.bg-white, section.bg-zinc-50, section.bg-zinc-100, footer.bg-white)
   .text-black {
-  color: #fafafa;
+  color: #f4f4f5;
 }
 
 .dark
   :is(section.bg-white, section.bg-zinc-50, section.bg-zinc-100, footer.bg-white)
   :is(.text-zinc-600, .text-zinc-700) {
-  color: #d4d4d8;
+  color: #d1d1d1;
 }
 
 .dark
   :is(section.bg-white, section.bg-zinc-50, section.bg-zinc-100, footer.bg-white)
   :is(.text-zinc-400, .text-zinc-500) {
-  color: #a1a1aa;
+  color: #999999;
 }
 
 .dark
@@ -201,29 +206,56 @@ html.dark {
 .dark
   :is(section.bg-white, section.bg-zinc-50, section.bg-zinc-100, footer.bg-white)
   :is(a, button, span).bg-black {
-  background-color: #fafafa;
-  color: #09090b;
+  background-color: #f4f4f5;
+  color: #080808;
 }
 
 .dark
   :is(section.bg-white, section.bg-zinc-50, section.bg-zinc-100, footer.bg-white)
   :is(a, button, span).bg-white {
-  background-color: #fafafa;
-  color: #09090b;
+  background-color: #242424;
+  border-color: rgb(255 255 255 / 18%);
+  color: #f4f4f5;
 }
 
 .dark
   :is(section.bg-white, section.bg-zinc-50, section.bg-zinc-100, footer.bg-white)
-  :is(a, button).bg-black:hover,
-.dark
-  :is(section.bg-white, section.bg-zinc-50, section.bg-zinc-100, footer.bg-white)
-  :is(a, button).bg-white:hover {
+  :is(a, button).bg-black:hover {
   background-color: #d4d4d8;
 }
 
 .dark
   :is(section.bg-white, section.bg-zinc-50, section.bg-zinc-100, footer.bg-white)
+  :is(a, button).bg-white:hover {
+  background-color: #333333;
+}
+
+.dark
+  :is(section.bg-white, section.bg-zinc-50, section.bg-zinc-100, footer.bg-white)
   :is(input, select).bg-white {
-  background-color: #18181b;
-  color: #fafafa;
+  background-color: #151515;
+  color: #f4f4f5;
+}
+
+.dark
+  :is(section.bg-white, section.bg-zinc-50, section.bg-zinc-100, footer.bg-white)
+  :is(div, article, aside, form).bg-black {
+  background-color: #101010;
+  border-color: rgb(255 255 255 / 14%);
+}
+
+.dark [data-site-header] {
+  border-color: rgb(255 255 255 / 12%);
+  background-color: rgb(8 8 8 / 82%);
+  color: #f4f4f5;
+  box-shadow: 0 12px 35px rgb(0 0 0 / 28%);
+  backdrop-filter: blur(18px);
+}
+
+.dark [data-site-header] input {
+  color: #f4f4f5;
+}
+
+.dark [data-site-header] input::placeholder {
+  color: #777777;
 }

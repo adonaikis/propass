@@ -1,25 +1,80 @@
+"use client";
+
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { Building2, ChevronDown, CircleDollarSign, MapPin } from "lucide-react";
+import { useState, type FormEvent } from "react";
+
+const locations = [
+  { label: "Kinshasa", value: "kinshasa" },
+  { label: "Gombe", value: "gombe" },
+  { label: "Ngaliema", value: "ngaliema" },
+  { label: "Kintambo", value: "kintambo" },
+];
+
+const accommodationTypes = [
+  { label: "Tous les hébergements", value: "all" },
+  { label: "Chambre essentielle", value: "essential" },
+  { label: "Hôtel de luxe", value: "deluxe" },
+  { label: "Suite premium", value: "suite" },
+];
+
+const priceRanges = [
+  { label: "Tous les budgets", value: "all" },
+  { label: "$120 - $180", value: "120-180" },
+  { label: "$120 - $260", value: "120-260" },
+  { label: "$180 - $260", value: "180-260" },
+  { label: "$260 - $350", value: "260-350" },
+];
 
 const searchFields = [
   {
     label: "Localisation",
-    value: "Kinshasa",
+    name: "location",
+    options: locations,
     icon: MapPin,
   },
   {
     label: "Type",
-    value: "Hôtel de luxe",
+    name: "category",
+    options: accommodationTypes,
     icon: Building2,
   },
   {
     label: "Prix",
-    value: "$120 - $260",
+    name: "price",
+    options: priceRanges,
     icon: CircleDollarSign,
   },
-];
+] as const;
 
 export default function Hero() {
+  const router = useRouter();
+  const [location, setLocation] = useState("kinshasa");
+  const [category, setCategory] = useState("deluxe");
+  const [price, setPrice] = useState("120-260");
+
+  const values = { location, category, price };
+  const setters = {
+    location: setLocation,
+    category: setCategory,
+    price: setPrice,
+  };
+
+  const submitSearch = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const params = new URLSearchParams({ location, category });
+
+    if (price !== "all") {
+      const [minPrice, maxPrice] = price.split("-");
+      params.set("minPrice", minPrice);
+      params.set("maxPrice", maxPrice);
+    }
+
+    router.push(`/chambres?${params.toString()}#chambres`);
+  };
+
   return (
     <section
       id="top"
@@ -28,8 +83,8 @@ export default function Hero() {
     >
       <Image
         data-hero-media
-        src="/images/propass-hero.jpg"
-        alt="Hôtel moderne de luxe avec piscine au coucher du soleil"
+        src="/PHOTO-PROPASS/propas-1 (14).jpg"
+        alt="Façade principale de Propass à Kinshasa"
         fill
         sizes="100vw"
         preload
@@ -56,6 +111,7 @@ export default function Hero() {
 
       <form
         data-hero-search
+        onSubmit={submitSearch}
         className="absolute inset-x-4 bottom-3 z-20 rounded-[20px] bg-white p-5 shadow-[0_24px_70px_rgba(0,0,0,0.22)] sm:inset-x-5 sm:p-6"
       >
         <div className="grid gap-5 min-[860px]:grid-cols-[1fr_1fr_1fr_0.72fr] min-[860px]:items-end min-[860px]:gap-6">
@@ -67,24 +123,30 @@ export default function Hero() {
                 <span className="mb-3 block text-sm font-medium text-black">
                   {field.label}
                 </span>
-                <button
-                  className="flex h-10 w-full items-center justify-between rounded-md border border-zinc-200 bg-white px-5 text-left text-sm text-black transition-colors hover:border-zinc-300"
-                  type="button"
-                >
-                  <span className="flex min-w-0 items-center gap-3">
-                    <Icon
-                      className="size-4 shrink-0 text-zinc-400"
-                      strokeWidth={2}
-                      aria-hidden="true"
-                    />
-                    <span className="truncate">{field.value}</span>
-                  </span>
-                  <ChevronDown
-                    className="size-4 shrink-0 text-black"
+                <span className="relative block">
+                  <Icon
+                    className="pointer-events-none absolute top-1/2 left-5 z-10 size-4 -translate-y-1/2 text-zinc-400"
                     strokeWidth={2}
                     aria-hidden="true"
                   />
-                </button>
+                  <select
+                    name={field.name}
+                    value={values[field.name]}
+                    onChange={(event) => setters[field.name](event.target.value)}
+                    className="h-10 w-full appearance-none rounded-md border border-zinc-200 bg-white pr-10 pl-12 text-sm text-black outline-none transition-colors hover:border-zinc-300 focus:border-black"
+                  >
+                    {field.options.map((option) => (
+                      <option key={option.value} value={option.value}>
+                        {option.label}
+                      </option>
+                    ))}
+                  </select>
+                  <ChevronDown
+                    className="pointer-events-none absolute top-1/2 right-4 size-4 -translate-y-1/2 text-black"
+                    strokeWidth={2}
+                    aria-hidden="true"
+                  />
+                </span>
               </label>
             );
           })}
@@ -92,6 +154,7 @@ export default function Hero() {
           <button
             data-hero-field
             data-magnetic="6"
+            data-pulse
             className="h-10 rounded-md bg-black px-4 text-xs font-semibold whitespace-nowrap text-white transition-colors hover:bg-zinc-800 min-[860px]:mt-8"
             type="submit"
           >

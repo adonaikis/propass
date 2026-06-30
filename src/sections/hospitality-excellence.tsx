@@ -42,8 +42,8 @@ export default function HospitalityExcellence() {
             <div className="relative min-h-[250px] overflow-hidden rounded-[10px] bg-zinc-200 min-[1180px]:min-h-[310px] min-[1180px]:rounded-[14px]">
               <Image
                 data-parallax="4"
-                src="/images/propass-excellence-room.jpg"
-                alt="Chambre confortable avec grande baie vitrée"
+                src="/PHOTO-PROPASS/chambre70$.jpg"
+                alt="Chambre Propass avec lits et linge blanc"
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1180px) 186px, 245px"
                 className="scale-[1.06] object-cover object-center"
@@ -129,8 +129,8 @@ export default function HospitalityExcellence() {
             <div className="relative h-[165px] overflow-hidden rounded-[16px] bg-zinc-200 min-[1180px]:h-[205px] min-[1180px]:rounded-[20px]">
               <Image
                 data-parallax="4"
-                src="/images/propass-excellence-lounge.jpg"
-                alt="Salon chaleureux avec poêle et vue sur la forêt"
+                src="/PHOTO-PROPASS/secretaire.jpg"
+                alt="Agente Propass à l'accueil"
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1180px) 138px, 180px"
                 className="scale-[1.06] object-cover object-center"

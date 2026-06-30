@@ -2,13 +2,26 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useMemo, useRef, useState, type MouseEvent } from "react";
+import {
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+  type MouseEvent,
+} from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
-import { ArrowUpRight, Heart, Star } from "lucide-react";
-import { rooms, type Room, type RoomCategory } from "@/src/data/rooms";
+import { ArrowUpRight, Heart, MapPin, Star, X } from "lucide-react";
+import {
+  rooms,
+  type Room,
+  type RoomCategory,
+  type RoomLocation,
+} from "@/src/data/rooms";
 
 type Filter = "all" | RoomCategory;
+type LocationFilter = "all" | "kinshasa" | RoomLocation;
+type PriceRange = { min: number; max: number } | null;
 
 const filters: { label: string; value: Filter }[] = [
   { label: "Toutes", value: "all" },
@@ -87,6 +100,9 @@ function RoomCard({
               aria-hidden="true"
             />
             {room.rating}
+            <span className="mx-1 text-zinc-300">·</span>
+            <MapPin className="size-3" strokeWidth={1.8} aria-hidden="true" />
+            {room.locationLabel}
           </p>
         </div>
         <p className="shrink-0 text-right text-sm font-semibold">
@@ -102,15 +118,68 @@ function RoomCard({
 
 export default function RoomCatalog() {
   const [activeFilter, setActiveFilter] = useState<Filter>("all");
+  const [locationFilter, setLocationFilter] =
+    useState<LocationFilter>("all");
+  const [priceRange, setPriceRange] = useState<PriceRange>(null);
   const [favorites, setFavorites] = useState<Set<string>>(() => new Set());
   const grid = useRef<HTMLDivElement>(null);
 
+  useEffect(() => {
+    const applyUrlFilters = () => {
+      const params = new URLSearchParams(window.location.search);
+      const category = params.get("category");
+      const location = params.get("location");
+      const minPrice = Number(params.get("minPrice"));
+      const maxPrice = Number(params.get("maxPrice"));
+
+      const validCategory: Filter = ["essential", "deluxe", "suite"].includes(
+        category ?? "",
+      )
+        ? (category as RoomCategory)
+        : "all";
+
+      const validLocation: LocationFilter = [
+        "kinshasa",
+        "gombe",
+        "ngaliema",
+        "kintambo",
+      ].includes(location ?? "")
+        ? (location as Exclude<LocationFilter, "all">)
+        : "all";
+
+      setActiveFilter(validCategory);
+      setLocationFilter(validLocation);
+      setPriceRange(
+        Number.isFinite(minPrice) &&
+          Number.isFinite(maxPrice) &&
+          minPrice > 0 &&
+          maxPrice >= minPrice
+          ? { min: minPrice, max: maxPrice }
+          : null,
+      );
+    };
+
+    applyUrlFilters();
+    window.addEventListener("popstate", applyUrlFilters);
+    return () => window.removeEventListener("popstate", applyUrlFilters);
+  }, []);
+
   const visibleRooms = useMemo(
     () =>
-      activeFilter === "all"
-        ? rooms
-        : rooms.filter((room) => room.category === activeFilter),
-    [activeFilter],
+      rooms.filter((room) => {
+        const matchesCategory =
+          activeFilter === "all" || room.category === activeFilter;
+        const matchesLocation =
+          locationFilter === "all" ||
+          locationFilter === "kinshasa" ||
+          room.location === locationFilter;
+        const matchesPrice =
+          !priceRange ||
+          (room.price >= priceRange.min && room.price <= priceRange.max);
+
+        return matchesCategory && matchesLocation && matchesPrice;
+      }),
+    [activeFilter, locationFilter, priceRange],
   );
 
   useGSAP(
@@ -134,8 +203,31 @@ export default function RoomCatalog() {
         },
       );
     },
-    { scope: grid, dependencies: [activeFilter], revertOnUpdate: true },
+    {
+      scope: grid,
+      dependencies: [activeFilter, locationFilter, priceRange],
+      revertOnUpdate: true,
+    },
   );
+
+  const hasFilters =
+    activeFilter !== "all" || locationFilter !== "all" || priceRange !== null;
+
+  const locationLabel =
+    locationFilter === "kinshasa"
+      ? "Kinshasa"
+      : rooms.find((room) => room.location === locationFilter)?.locationLabel;
+
+  const categoryLabel = filters.find(
+    (filter) => filter.value === activeFilter,
+  )?.label;
+
+  const clearFilters = () => {
+    setActiveFilter("all");
+    setLocationFilter("all");
+    setPriceRange(null);
+    window.history.replaceState(null, "", "/chambres#chambres");
+  };
 
   const toggleFavorite = (event: MouseEvent<HTMLButtonElement>, id: string) => {
     setFavorites((current) => {
@@ -195,6 +287,45 @@ export default function RoomCatalog() {
           </div>
         </div>
 
+        {hasFilters ? (
+          <div
+            data-animate="reveal"
+            className="mt-7 flex flex-col gap-4 border-y border-zinc-200 py-4 sm:flex-row sm:items-center sm:justify-between"
+          >
+            <div className="flex flex-wrap items-center gap-2 text-[10px] font-semibold">
+              <span className="text-zinc-400">Recherche active :</span>
+              {locationLabel ? (
+                <span className="rounded-full border border-zinc-200 px-3 py-1">
+                  {locationLabel}
+                </span>
+              ) : null}
+              {activeFilter !== "all" ? (
+                <span className="rounded-full border border-zinc-200 px-3 py-1">
+                  {categoryLabel}
+                </span>
+              ) : null}
+              {priceRange ? (
+                <span className="rounded-full border border-zinc-200 px-3 py-1">
+                  ${priceRange.min} - ${priceRange.max}
+                </span>
+              ) : null}
+              <span className="text-zinc-500">
+                {visibleRooms.length} résultat
+                {visibleRooms.length === 1 ? "" : "s"}
+              </span>
+            </div>
+
+            <button
+              type="button"
+              onClick={clearFilters}
+              className="inline-flex w-fit items-center gap-2 text-[10px] font-semibold transition-colors hover:text-zinc-500"
+            >
+              <X className="size-3.5" strokeWidth={2} />
+              Effacer les filtres
+            </button>
+          </div>
+        ) : null}
+
         <div
           ref={grid}
           className="mt-10 grid gap-x-4 gap-y-12 sm:grid-cols-2 lg:grid-cols-3"
@@ -207,6 +338,25 @@ export default function RoomCatalog() {
               onFavorite={toggleFavorite}
             />
           ))}
+
+          {visibleRooms.length === 0 ? (
+            <div className="py-10 sm:col-span-2 lg:col-span-3">
+              <h3 className="font-heading text-[26px] font-medium">
+                Aucun séjour ne correspond à ces critères
+              </h3>
+              <p className="mt-3 max-w-[480px] text-xs font-medium leading-5 text-zinc-500">
+                Élargissez la zone, la catégorie ou le budget pour afficher
+                davantage de chambres.
+              </p>
+              <button
+                type="button"
+                onClick={clearFilters}
+                className="mt-6 h-10 rounded-full bg-black px-5 text-xs font-semibold text-white transition-colors hover:bg-zinc-800"
+              >
+                Voir toutes les chambres
+              </button>
+            </div>
+          ) : null}
         </div>
       </div>
     </section>
