@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist_Mono, Montserrat, Poppins } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { cn } from "@/src/lib/utils";
 
@@ -21,6 +22,15 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const themeScript = `
+  try {
+    const storedTheme = localStorage.getItem("propass-theme");
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const useDarkTheme = storedTheme ? storedTheme === "dark" : prefersDark;
+    document.documentElement.classList.toggle("dark", useDarkTheme);
+    document.documentElement.style.colorScheme = useDarkTheme ? "dark" : "light";
+  } catch (_) {}
+`;
 
 export const metadata: Metadata = {
   title: "Propass Hotel | Kinshasa",
@@ -35,6 +45,7 @@ export default function RootLayout({
   return (
     <html
       lang="fr"
+      suppressHydrationWarning
       className={cn(
         "h-full",
         "antialiased",
@@ -44,7 +55,12 @@ export default function RootLayout({
         geistMono.variable
       )}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        {children}
+        <Script id="propass-theme" strategy="beforeInteractive">
+          {themeScript}
+        </Script>
+      </body>
     </html>
   );
 }

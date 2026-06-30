@@ -19,7 +19,7 @@ export default function RoomsPage() {
   return (
     <SiteAnimations>
       <div className="min-h-screen bg-white pb-3">
-        <Header variant="rooms" />
+        <Header />
         <main>
           <RoomHero />
           <RoomCatalog />

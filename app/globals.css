@@ -128,3 +128,102 @@
     @apply font-sans;
   }
 }
+
+html {
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+.theme-transition *,
+.theme-transition *::before,
+.theme-transition *::after {
+  transition-property: background-color, border-color, color, box-shadow !important;
+  transition-duration: 300ms !important;
+  transition-timing-function: ease !important;
+}
+
+.dark body,
+.dark .min-h-screen.bg-white {
+  background-color: #09090b;
+  color: #fafafa;
+}
+
+.dark :is(section.bg-white, section.bg-zinc-50, section.bg-zinc-100, footer.bg-white) {
+  background-color: #09090b;
+  color: #fafafa;
+}
+
+.dark
+  :is(section.bg-white, section.bg-zinc-50, section.bg-zinc-100, footer.bg-white)
+  :is(div, article, aside, form, label).bg-white {
+  background-color: #18181b;
+}
+
+.dark
+  :is(section.bg-white, section.bg-zinc-50, section.bg-zinc-100, footer.bg-white)
+  :is(.bg-zinc-50, .bg-zinc-100) {
+  background-color: #18181b;
+}
+
+.dark
+  :is(section.bg-white, section.bg-zinc-50, section.bg-zinc-100, footer.bg-white)
+  :is(.bg-zinc-200, .bg-zinc-300) {
+  background-color: #27272a;
+}
+
+.dark
+  :is(section.bg-white, section.bg-zinc-50, section.bg-zinc-100, footer.bg-white)
+  .text-black {
+  color: #fafafa;
+}
+
+.dark
+  :is(section.bg-white, section.bg-zinc-50, section.bg-zinc-100, footer.bg-white)
+  :is(.text-zinc-600, .text-zinc-700) {
+  color: #d4d4d8;
+}
+
+.dark
+  :is(section.bg-white, section.bg-zinc-50, section.bg-zinc-100, footer.bg-white)
+  :is(.text-zinc-400, .text-zinc-500) {
+  color: #a1a1aa;
+}
+
+.dark
+  :is(section.bg-white, section.bg-zinc-50, section.bg-zinc-100, footer.bg-white)
+  :is(.border-zinc-200, .border-zinc-300, .border-zinc-400, .border-black) {
+  border-color: rgb(255 255 255 / 18%);
+}
+
+.dark
+  :is(section.bg-white, section.bg-zinc-50, section.bg-zinc-100, footer.bg-white)
+  :is(a, button, span).bg-black {
+  background-color: #fafafa;
+  color: #09090b;
+}
+
+.dark
+  :is(section.bg-white, section.bg-zinc-50, section.bg-zinc-100, footer.bg-white)
+  :is(a, button, span).bg-white {
+  background-color: #fafafa;
+  color: #09090b;
+}
+
+.dark
+  :is(section.bg-white, section.bg-zinc-50, section.bg-zinc-100, footer.bg-white)
+  :is(a, button).bg-black:hover,
+.dark
+  :is(section.bg-white, section.bg-zinc-50, section.bg-zinc-100, footer.bg-white)
+  :is(a, button).bg-white:hover {
+  background-color: #d4d4d8;
+}
+
+.dark
+  :is(section.bg-white, section.bg-zinc-50, section.bg-zinc-100, footer.bg-white)
+  :is(input, select).bg-white {
+  background-color: #18181b;
+  color: #fafafa;
+}
