@@ -17,7 +17,11 @@ const navItems = [
   { label: "FAQ", href: "/faqs" },
 ];
 
-export default function Header() {
+export default function Header({
+  overlayOnHero = false,
+}: {
+  overlayOnHero?: boolean;
+}) {
   const pathname = usePathname();
   const header = useRef<HTMLElement>(null);
   const themeTimer = useRef<number | null>(null);
@@ -124,18 +128,26 @@ export default function Header() {
   };
 
   const isDarkMode = theme === "dark";
-  const useDarkTheme = isDarkMode || (scrolled && darkSection);
+  const heroOverlayActive = overlayOnHero && !scrolled;
+  const useDarkTheme =
+    isDarkMode || heroOverlayActive || (scrolled && darkSection);
 
   return (
     <header
       ref={header}
       data-site-header
-      className={`sticky top-0 z-50 mx-auto flex h-14 w-[calc(100%-32px)] max-w-[1180px] items-center justify-between gap-3 border-b px-0 transition-[background-color,border-color,box-shadow,color] duration-300 ${
+      className={`${
+        overlayOnHero
+          ? `${scrolled ? "fixed" : "absolute"} top-0 left-1/2 -translate-x-1/2`
+          : "sticky top-0 mx-auto"
+      } z-50 flex h-14 w-[calc(100%-32px)] max-w-[1180px] items-center justify-between gap-3 border-b px-0 transition-[background-color,border-color,box-shadow,color] duration-300 ${
         scrolled
           ? useDarkTheme
             ? "border-white/15 bg-black/75 text-white shadow-[0_12px_35px_rgba(0,0,0,0.2)] backdrop-blur-xl"
             : "border-black/10 bg-white/85 text-black shadow-[0_12px_35px_rgba(0,0,0,0.08)] backdrop-blur-xl"
-          : "border-transparent bg-white text-black"
+          : heroOverlayActive
+            ? "border-white/20 bg-transparent text-white"
+            : "border-transparent bg-white text-black"
       }`}
     >
       <div className="flex shrink-0 items-center gap-1">

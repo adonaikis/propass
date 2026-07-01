@@ -11,8 +11,8 @@ export default function AboutHero() {
     >
       <div data-hero-media className="absolute inset-[-16px]">
         <Image
-          src="/images/propass-hero.jpg"
-          alt="Architecture et piscine d'une adresse Propass"
+          src="/PHOTO-PROPASS/vue-entré.jpg"
+          alt="Façade historique de Propass à Kinshasa"
           fill
           preload
           sizes="(max-width: 1180px) 100vw, 1180px"

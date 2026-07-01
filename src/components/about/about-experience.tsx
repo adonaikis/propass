@@ -26,8 +26,8 @@ const experiences: {
     eyebrow: "Dès votre arrivée",
     description:
       "Une équipe présente, un échange direct et des réponses rapides pour commencer le séjour sans attente inutile.",
-    image: "/images/propass-trusted-lobby.jpg",
-    alt: "Salon d'accueil Propass aménagé pour les voyageurs",
+    image: "/PHOTO-PROPASS/sec.jpg",
+    alt: "Agente Propass disponible au bureau d'accueil",
     Icon: ConciergeBell,
   },
   {
@@ -35,8 +35,8 @@ const experiences: {
     eyebrow: "Pendant votre séjour",
     description:
       "Des chambres calmes, des équipements essentiels et une attention discrète qui respecte votre rythme.",
-    image: "/images/propass-trusted-room.jpg",
-    alt: "Chambre Propass lumineuse et confortable",
+    image: "/PHOTO-PROPASS/chambre100$1.jpg",
+    alt: "Chambre Propass lumineuse avec lit double",
     Icon: BedDouble,
   },
   {
@@ -44,8 +44,8 @@ const experiences: {
     eyebrow: "À chaque moment",
     description:
       "Restauration, transport ou besoin particulier : chaque demande est coordonnée depuis un seul point de contact.",
-    image: "/images/propass-best-terrace.jpg",
-    alt: "Espace de restauration et de détente Propass",
+    image: "/PHOTO-PROPASS/resto2.jpg",
+    alt: "Restaurant Propass préparé pour le service",
     Icon: UtensilsCrossed,
   },
 ];

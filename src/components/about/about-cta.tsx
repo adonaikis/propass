@@ -11,8 +11,8 @@ export default function AboutCta() {
       >
         <div data-parallax="4" className="absolute inset-[-28px]">
           <Image
-            src="/images/propass-about-rooftop.jpg"
-            alt="Vue panoramique depuis un espace de détente Propass"
+            src="/PHOTO-PROPASS/devantmaisonpas.jpg"
+            alt="Jardin et maisons de passage Propass"
             fill
             sizes="(max-width: 1180px) 100vw, 1180px"
             className="object-cover object-bottom grayscale"

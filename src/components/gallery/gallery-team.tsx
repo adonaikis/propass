@@ -27,15 +27,15 @@ export default function GalleryTeam() {
         <div
           data-animate="reveal"
           data-tilt="2"
-          className="relative aspect-[3/2] overflow-hidden rounded-[6px]"
+          className="group relative aspect-[3/2] overflow-hidden rounded-[6px]"
         >
           <div data-parallax="4" className="absolute inset-[-28px]">
             <Image
-              src="/images/propass-services-ticket.png"
-              alt="Agente Propass accompagnant un voyageur"
+              src="/PHOTO-PROPASS/secretaire.jpg"
+              alt="Agente Propass disponible au bureau d'accueil"
               fill
               sizes="(max-width: 1024px) 100vw, 54vw"
-              className="object-cover object-center grayscale"
+              className="object-cover object-center transition-[filter] duration-700 group-hover:grayscale"
             />
           </div>
           <div className="absolute inset-0 bg-black/15" />

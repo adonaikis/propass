@@ -18,8 +18,8 @@ export const metadata: Metadata = {
 export default function RoomsPage() {
   return (
     <SiteAnimations>
-      <div className="min-h-screen bg-white pb-3">
-        <Header />
+      <div className="relative min-h-screen bg-white pb-3">
+        <Header overlayOnHero />
         <main>
           <RoomHero />
           <RoomCatalog />

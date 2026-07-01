@@ -72,8 +72,8 @@ export default function SignatureStay() {
         >
           <Image
             data-parallax="4"
-            src="/images/propass-about-window.jpg"
-            alt="Vue panoramique depuis une suite Propass"
+            src="/PHOTO-PROPASS/chambre100$.jpg"
+            alt="Chambre Propass avec grand lit préparé pour le séjour"
             fill
             sizes="(max-width: 1024px) 100vw, 62vw"
             className="scale-[1.08] object-cover object-center"

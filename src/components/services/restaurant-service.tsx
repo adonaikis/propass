@@ -16,15 +16,15 @@ export default function RestaurantService() {
           <div
             data-animate="reveal"
             data-tilt="2"
-            className="relative aspect-[4/5] min-h-[430px] overflow-hidden rounded-[6px] sm:aspect-[5/4] lg:aspect-[4/5]"
+            className="group relative aspect-[4/5] min-h-[430px] overflow-hidden rounded-[6px] sm:aspect-[5/4] lg:aspect-[4/5]"
           >
             <div data-parallax="4" className="absolute inset-[-28px]">
               <Image
-                src="/images/propass-best-terrace.jpg"
-                alt="Salle de restauration calme et élégante de Propass"
+                src="/PHOTO-PROPASS/resto2.jpg"
+                alt="Salle de restauration Propass préparée pour le service"
                 fill
                 sizes="(max-width: 1024px) 100vw, 52vw"
-                className="object-cover object-center grayscale"
+                className="object-cover object-center transition-[filter] duration-700 group-hover:grayscale"
               />
             </div>
             <div className="absolute inset-0 bg-black/15" />

@@ -42,16 +42,16 @@ export default function ServicesHero() {
     <section
       id="top"
       data-hero
-      className="relative mx-auto min-h-[690px] w-[calc(100%-24px)] max-w-[1180px] overflow-hidden bg-black text-white sm:min-h-[670px]"
+      className="group relative mx-auto min-h-[690px] w-[calc(100%-24px)] max-w-[1180px] overflow-hidden bg-black text-white sm:min-h-[670px]"
     >
       <div data-hero-media className="absolute inset-[-16px]">
         <Image
-          src="/images/propass-services-ticket.png"
-          alt="Un passager reçoit son billet de voyage au comptoir Propass"
+          src="/PHOTO-PROPASS/secretaire.jpg"
+          alt="Agente Propass disponible pour accompagner les voyageurs"
           fill
           preload
           sizes="(max-width: 1180px) 100vw, 1180px"
-          className="object-cover object-[53%_center] grayscale"
+          className="object-cover object-[53%_center] transition-[filter] duration-700 group-hover:grayscale"
         />
       </div>
       <div className="absolute inset-0 bg-black/62" />

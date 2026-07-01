@@ -12,8 +12,8 @@ export default function ReservationConcierge() {
         >
           <Image
             data-parallax="4"
-            src="/images/propass-trusted-lobby.jpg"
-            alt="Salon de réception Propass disponible pour accompagner les voyageurs"
+            src="/PHOTO-PROPASS/secretaire.jpg"
+            alt="Agente Propass disponible pour accompagner les voyageurs"
             fill
             sizes="(max-width: 768px) 100vw, 55vw"
             className="scale-[1.08] object-cover object-center grayscale"

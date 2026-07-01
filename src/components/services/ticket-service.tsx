@@ -225,14 +225,14 @@ export default function TicketService() {
 
           <div
             data-animate="reveal"
-            className="relative min-h-[430px] overflow-hidden border-t border-white/15 lg:border-t-0 lg:border-l"
+            className="group relative min-h-[430px] overflow-hidden border-t border-white/15 lg:border-t-0 lg:border-l"
           >
             <Image
-              src="/images/propass-services-ticket.png"
-              alt="Conseillère Propass remettant un billet à un passager"
+              src="/PHOTO-PROPASS/sec.jpg"
+              alt="Conseillère Propass au bureau d'accueil et de réservation"
               fill
               sizes="(max-width: 1024px) 100vw, 45vw"
-              className="object-cover object-center grayscale"
+              className="object-cover object-center transition-[filter] duration-700 group-hover:grayscale"
             />
             <div className="absolute inset-0 bg-black/42" />
 

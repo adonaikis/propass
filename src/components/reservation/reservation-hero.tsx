@@ -17,8 +17,8 @@ export default function ReservationHero() {
     >
       <div data-hero-media className="absolute inset-[-14px]">
         <Image
-          src="/images/propass-rooms-hero.png"
-          alt="Suite Propass prête à accueillir les voyageurs"
+          src="/PHOTO-PROPASS/chambre70$.jpg"
+          alt="Chambre Propass préparée pour accueillir les voyageurs"
           fill
           preload
           sizes="(max-width: 1180px) 100vw, 1180px"

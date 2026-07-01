@@ -30,129 +30,128 @@ const filters: { label: string; value: Category }[] = [
 const galleryImages: GalleryImage[] = [
   {
     id: "team-portrait",
-    src: "/images/propass-gallery-team.png",
-    alt: "Quatre agents de l'équipe Propass dans le lobby",
-    title: "L’équipe Propass",
+    src: "/PHOTO-PROPASS/sec.jpg",
+    alt: "Agente Propass au bureau d'accueil",
+    title: "L’accueil Propass",
     category: "team",
     categoryLabel: "Équipe",
     aspect: "aspect-[16/10]",
   },
   {
-    id: "travel-concierge",
-    src: "/images/propass-services-ticket.png",
-    alt: "Une agente accompagne un voyageur au comptoir",
-    title: "L’accompagnement voyage",
+    id: "team-at-work",
+    src: "/PHOTO-PROPASS/secretaire.jpg",
+    alt: "Agente Propass travaillant au bureau d'accueil",
+    title: "Une équipe disponible",
     category: "team",
     categoryLabel: "Équipe",
     aspect: "aspect-[4/3]",
   },
   {
     id: "signature-room",
-    src: "/images/propass-rooms-hero.png",
-    alt: "Suite Propass spacieuse avec lumière naturelle",
-    title: "Suite Signature",
+    src: "/PHOTO-PROPASS/chambre100$1.jpg",
+    alt: "Chambre Propass lumineuse avec lit double",
+    title: "Chambre Premium",
     category: "rooms",
     categoryLabel: "Chambres",
     aspect: "aspect-[16/10]",
   },
   {
-    id: "horizon-room",
-    src: "/images/propass-about-window.jpg",
-    alt: "Chambre Horizon avec vue panoramique",
-    title: "Chambre Horizon",
+    id: "white-room",
+    src: "/PHOTO-PROPASS/chambre100$.jpg",
+    alt: "Chambre Propass avec grand lit et linge clair",
+    title: "Chambre Double",
     category: "rooms",
     categoryLabel: "Chambres",
     aspect: "aspect-[4/5]",
   },
   {
-    id: "garden-room",
-    src: "/images/propass-trusted-room.jpg",
-    alt: "Chambre lumineuse ouverte sur un jardin",
-    title: "Chambre Jardin",
+    id: "twin-room",
+    src: "/PHOTO-PROPASS/chambre70$.jpg",
+    alt: "Chambre Propass claire avec plusieurs couchages",
+    title: "Chambre Familiale",
     category: "rooms",
     categoryLabel: "Chambres",
     aspect: "aspect-[4/3]",
   },
   {
-    id: "restaurant-service",
-    src: "/images/propass-gallery-restaurant.png",
-    alt: "Une agente sert un plat dans le restaurant Propass",
-    title: "Le service à table",
-    category: "restaurant",
-    categoryLabel: "Restauration",
-    aspect: "aspect-[3/2]",
-  },
-  {
-    id: "restaurant-room",
-    src: "/images/propass-best-terrace.jpg",
-    alt: "Salle raffinée dédiée aux repas et aux rencontres",
+    id: "restaurant-tables",
+    src: "/PHOTO-PROPASS/resto2.jpg",
+    alt: "Tables dressées dans le restaurant Propass",
     title: "La salle de restauration",
     category: "restaurant",
     categoryLabel: "Restauration",
-    aspect: "aspect-[4/5]",
+    aspect: "aspect-[3/2]",
   },
   {
-    id: "rooftop-dining",
-    src: "/images/propass-about-rooftop.jpg",
-    alt: "Terrasse panoramique avec espace de restauration",
-    title: "La terrasse",
+    id: "restaurant-breakfast",
+    src: "/PHOTO-PROPASS/resto1.jpg",
+    alt: "Tables préparées pour le petit déjeuner Propass",
+    title: "Le petit déjeuner",
     category: "restaurant",
     categoryLabel: "Restauration",
     aspect: "aspect-[4/5]",
-    position: "object-bottom",
   },
   {
-    id: "premium-room",
-    src: "/images/propass-excellence-room.jpg",
-    alt: "Chambre premium avec coin salon",
-    title: "Le confort premium",
+    id: "restaurant-counter",
+    src: "/PHOTO-PROPASS/resto.jpg",
+    alt: "Comptoir et espace de restauration Propass",
+    title: "Le comptoir",
+    category: "restaurant",
+    categoryLabel: "Restauration",
+    aspect: "aspect-[4/5]",
+  },
+  {
+    id: "essential-room",
+    src: "/PHOTO-PROPASS/chambre50$.jpg",
+    alt: "Chambre Propass avec lit double et linge orange",
+    title: "Chambre Essentielle",
     category: "rooms",
     categoryLabel: "Chambres",
     aspect: "aspect-[4/5]",
   },
   {
-    id: "night-suite",
-    src: "/images/propass-trusted-suite.jpg",
-    alt: "Suite calme avec grand lit et fenêtre",
-    title: "Suite Nocturne",
+    id: "warm-room",
+    src: "/PHOTO-PROPASS/chambre1.jpg",
+    alt: "Chambre Propass chaleureuse avec plusieurs couchages",
+    title: "Chambre Confort",
     category: "rooms",
     categoryLabel: "Chambres",
     aspect: "aspect-[4/3]",
   },
   {
-    id: "main-lobby",
-    src: "/images/propass-trusted-lobby.jpg",
-    alt: "Lobby Propass avec espaces de détente",
-    title: "Le lobby",
+    id: "event-hall",
+    src: "/PHOTO-PROPASS/salle2.jpg",
+    alt: "Grande salle de réception Propass avec scène",
+    title: "La salle de réception",
     category: "spaces",
     categoryLabel: "Espaces",
     aspect: "aspect-[4/5]",
   },
   {
-    id: "hotel-building",
-    src: "/images/propass-trusted-building.jpg",
-    alt: "Architecture extérieure d'une adresse Propass",
-    title: "L’architecture",
+    id: "main-building",
+    src: "/PHOTO-PROPASS/propas-1 (14).jpg",
+    alt: "Façade principale du bâtiment Propass",
+    title: "La façade principale",
     category: "spaces",
     categoryLabel: "Espaces",
     aspect: "aspect-[3/2]",
   },
   {
-    id: "pool-view",
-    src: "/images/propass-best-crystal.jpg",
-    alt: "Piscine panoramique et espaces extérieurs",
-    title: "La piscine panoramique",
+    id: "guest-house",
+    src: "/PHOTO-PROPASS/devantmaisonpas.jpg",
+    alt: "Maison de passage au cœur du jardin Propass",
+    title: "La maison de passage",
     category: "spaces",
     categoryLabel: "Espaces",
     aspect: "aspect-[4/5]",
   },
   {
-    id: "bright-room",
-    src: "/images/propass-best-golden.jpg",
-    alt: "Chambre claire aux détails naturels",
-    title: "Chambre Lumière",
-    category: "rooms",
-    categoryLabel: "Chambres",
+    id: "heritage-building",
+    src: "/PHOTO-PROPASS/vue-entré.jpg",
+    alt: "Bâtiment historique Propass vu depuis le jardin",
+    title: "Le bâtiment historique",
+    category: "spaces",
+    categoryLabel: "Espaces",
     aspect: "aspect-[4/5]",
   },
 ];
@@ -333,7 +332,7 @@ export default function GalleryGrid() {
                   alt={image.alt}
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className={`object-cover grayscale transition-transform duration-700 group-hover:scale-105 ${
+                  className={`object-cover transition-[filter,transform] duration-700 group-hover:scale-105 group-hover:grayscale ${
                     image.position ?? "object-center"
                   }`}
                 />
@@ -396,7 +395,7 @@ export default function GalleryGrid() {
 
             <div
               data-lightbox-image
-              className="relative h-full w-[calc(100%-104px)] overflow-hidden rounded-[6px] sm:w-[calc(100%-144px)]"
+              className="group relative h-full w-[calc(100%-104px)] overflow-hidden rounded-[6px] sm:w-[calc(100%-144px)]"
             >
               <Image
                 key={selectedImage.id}
@@ -404,7 +403,7 @@ export default function GalleryGrid() {
                 alt={selectedImage.alt}
                 fill
                 sizes="100vw"
-                className="object-contain"
+                className="object-contain transition-[filter] duration-700 group-hover:grayscale"
               />
             </div>
 

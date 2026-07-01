@@ -40,15 +40,15 @@ export default function HostelService() {
         <div className="relative mt-12 min-h-[720px] sm:min-h-[650px] lg:min-h-[610px]">
           <div
             data-animate="reveal"
-            className="absolute inset-x-0 top-0 h-[420px] overflow-hidden rounded-[6px] sm:h-[480px] lg:right-[24%] lg:h-[560px]"
+            className="group absolute inset-x-0 top-0 h-[420px] overflow-hidden rounded-[6px] sm:h-[480px] lg:right-[24%] lg:h-[560px]"
           >
             <div data-parallax="5" className="absolute inset-[-30px]">
               <Image
-                src="/images/propass-trusted-building.jpg"
-                alt="Façade lumineuse de l'auberge Propass"
+                src="/PHOTO-PROPASS/maisondepassage.jpg"
+                alt="Maisons de passage Propass au cœur du jardin"
                 fill
                 sizes="(max-width: 1024px) 100vw, 76vw"
-                className="object-cover object-center grayscale"
+                className="object-cover object-center transition-[filter] duration-700 group-hover:grayscale"
               />
             </div>
             <div className="absolute inset-0 bg-black/10" />
@@ -56,15 +56,15 @@ export default function HostelService() {
 
           <div
             data-float="6"
-            className="absolute right-4 top-[330px] z-10 w-[190px] rounded-[6px] border-[5px] border-white bg-white shadow-[0_16px_40px_rgba(0,0,0,0.16)] sm:right-9 sm:top-[365px] sm:w-[245px] lg:right-0 lg:top-12 lg:w-[300px]"
+            className="group absolute right-4 top-[330px] z-10 w-[190px] rounded-[6px] border-[5px] border-white bg-white shadow-[0_16px_40px_rgba(0,0,0,0.16)] sm:right-9 sm:top-[365px] sm:w-[245px] lg:right-0 lg:top-12 lg:w-[300px]"
           >
             <div className="relative aspect-[4/5] overflow-hidden rounded-[3px]">
               <Image
-                src="/images/propass-trusted-room.jpg"
-                alt="Chambre double confortable de l'auberge Propass"
+                src="/PHOTO-PROPASS/chambre100$1.jpg"
+                alt="Chambre double lumineuse de l'auberge Propass"
                 fill
                 sizes="(max-width: 640px) 190px, 300px"
-                className="object-cover object-center grayscale"
+                className="object-cover object-center transition-[filter] duration-700 group-hover:grayscale"
               />
             </div>
           </div>

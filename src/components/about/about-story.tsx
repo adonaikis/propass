@@ -54,8 +54,8 @@ export default function AboutStory() {
             >
               <div data-parallax="5" className="absolute inset-[-28px]">
                 <Image
-                  src="/images/propass-about-window.jpg"
-                  alt="Espace Propass ouvert sur la ville"
+                  src="/PHOTO-PROPASS/propas-ac.jpg"
+                  alt="Bâtiment Propass entouré de palmiers"
                   fill
                   sizes="(max-width: 1024px) 78vw, 46vw"
                   className="object-cover object-center grayscale"
@@ -70,8 +70,8 @@ export default function AboutStory() {
             >
               <div className="relative aspect-[4/5] overflow-hidden rounded-[3px]">
                 <Image
-                  src="/images/propass-trusted-lobby.jpg"
-                  alt="Salon d'accueil calme et lumineux"
+                  src="/PHOTO-PROPASS/secretaire.jpg"
+                  alt="Agente Propass au bureau d'accueil"
                   fill
                   sizes="(max-width: 1024px) 52vw, 28vw"
                   className="object-cover object-center grayscale"

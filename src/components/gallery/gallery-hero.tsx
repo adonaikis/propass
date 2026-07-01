@@ -12,16 +12,16 @@ export default function GalleryHero() {
     <section
       id="top"
       data-hero
-      className="relative mx-auto min-h-[670px] w-[calc(100%-24px)] max-w-[1180px] overflow-hidden bg-black text-white"
+      className="group relative mx-auto min-h-[670px] w-[calc(100%-24px)] max-w-[1180px] overflow-hidden bg-black text-white"
     >
       <div data-hero-media className="absolute inset-[-16px]">
         <Image
-          src="/images/propass-gallery-team.png"
-          alt="Équipe d'agents de l'hôtel Propass"
+          src="/PHOTO-PROPASS/sec.jpg"
+          alt="Agente Propass au bureau d'accueil"
           fill
           preload
           sizes="(max-width: 1180px) 100vw, 1180px"
-          className="object-cover object-center grayscale"
+          className="object-cover object-center transition-[filter] duration-700 group-hover:grayscale"
         />
       </div>
       <div className="absolute inset-0 bg-black/60" />

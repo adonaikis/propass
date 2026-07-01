@@ -24,8 +24,8 @@ export default function GuestStories() {
               className="relative aspect-[4/3] overflow-hidden rounded-[6px] bg-zinc-200 md:aspect-[3/4]"
             >
               <Image
-                src="/images/propass-best-golden.jpg"
-                alt="Chambre lumineuse choisie par une cliente Propass"
+                src="/PHOTO-PROPASS/chambre50$.jpg"
+                alt="Chambre Propass avec lit double et linge orange"
                 fill
                 sizes="(max-width: 768px) 100vw, 25vw"
                 className="object-cover object-center"
@@ -39,8 +39,8 @@ export default function GuestStories() {
             className="relative aspect-[4/3] overflow-hidden rounded-[6px] bg-zinc-200"
           >
             <Image
-              src="/images/propass-trusted-room.jpg"
-              alt="Chambre Propass avec vue sur la végétation"
+              src="/PHOTO-PROPASS/chambre1.jpg"
+              alt="Chambre Propass chaleureuse avec plusieurs couchages"
               fill
               sizes="(max-width: 768px) 100vw, 48vw"
               className="object-cover object-center"
@@ -64,25 +64,24 @@ export default function GuestStories() {
               ))}
             </div>
             <blockquote className="mt-5 text-[15px] font-medium leading-[1.35]">
-              “La chambre était calme, lumineuse et exactement comme présentée.
-              Le service nous a permis de profiter de Kinshasa sans perdre une
-              minute.”
+              “Nous préparons chaque chambre avec soin pour offrir un séjour
+              calme, simple et fidèle à ce qui a été réservé.”
             </blockquote>
 
             <div className="mt-7 flex items-center gap-3">
               <div className="relative size-10 overflow-hidden rounded-full bg-zinc-200">
                 <Image
-                  src="/images/propass-testimonial-profile.jpg"
-                  alt="Portrait de Sarah Mbuyi"
+                  src="/PHOTO-PROPASS/sec.jpg"
+                  alt="Portrait d'une agente Propass"
                   fill
                   sizes="40px"
                   className="object-cover object-center"
                 />
               </div>
               <div>
-                <p className="text-xs font-semibold">Sarah Mbuyi</p>
+                <p className="text-xs font-semibold">Équipe Propass</p>
                 <p className="text-[10px] font-medium text-zinc-500">
-                  Séjour professionnel
+                  Accueil et réservations
                 </p>
               </div>
             </div>
